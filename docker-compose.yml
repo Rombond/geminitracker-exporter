@@ -1,0 +1,14 @@
+services:
+  geminitracker-exporter:
+    container_name: geminitracker-exporter
+    image: ghcr.io/rombond/geminitracker-exporter:latest
+    ports:
+      - "${EXPORTER_PORT:-9090}:${EXPORTER_PORT:-9090}"
+    environment:
+      - GEMINITRACKER_USERNAME=${GEMINITRACKER_USERNAME:-}
+      - GEMINITRACKER_PASSWORD=${GEMINITRACKER_PASSWORD:-}
+      - GEMINITRACKER_BASE_URL=${GEMINITRACKER_BASE_URL:-https://gemini-tracker.org}
+      - METRICS_PATH=${METRICS_PATH:-/metrics}
+      - PORT=${PORT:-9090}
+      - SCRAPE_INTERVAL=${SCRAPE_INTERVAL:-5m}
+    restart: unless-stopped

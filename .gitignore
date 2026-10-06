@@ -1,0 +1,118 @@
+# =============================================================================
+# GitIgnore for Geminitracker Exporter (Go Prometheus Exporter)
+# =============================================================================
+
+# =============================================================================
+# Binary Files & Build Artifacts
+# =============================================================================
+geminitracker_exporter
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go workspace artifacts
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Vendor and cache directories
+vendor/
+Godeps/
+pkg/
+dist/
+build/
+bin/
+go-build/
+
+# Docker build outputs (inside container context)
+.docker-cache/
+.go-mod-cache/
+
+# =============================================================================
+# Environment Files & Secrets - CRITICAL - DO NOT COMMIT
+# =============================================================================
+.env
+.env.local
+.env.*.local
+*.env.local
+*.pem
+*.key
+*.p12
+*.crt
+*.crl
+
+# Git credential cache (may contain stored passwords)
+.credentialcache/
+
+# =============================================================================
+# OS-Specific Files
+# =============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+desktop.ini
+
+# Linux/Binaries (systemd, etc.)
+systemd-private-*/
+snap-private-*/
+
+# =============================================================================
+# IDE & Editor Files
+# =============================================================================
+# VS Code
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# GoLand / IntelliJ
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usbCache/
+.idea/dictionaries
+.idea/libraries/
+.idea/**/workspace.xml
+*.iml
+*.iws
+
+# General editor backup files
+*~
+.swp
+.swo
+*.bak
+.cache/
+.cloudeaterm-cache/
+
+# =============================================================================
+# Logs & Test Coverage
+# =============================================================================
+*.log
+logs/
+var/log/*.log
+
+# Test coverage reports
+coverage.out
+coverage.txt
+coverage.html
+coverage.json
+profile.out
+profile.cache
+
+# =============================================================================
+# Miscellaneous Go Files
+# =============================================================================
+*.gcda
+*.gcno
+*.out
+*.test
