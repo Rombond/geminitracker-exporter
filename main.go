@@ -64,8 +64,8 @@ var (
 	reCaptcha = regexp.MustCompile(`name="_captcha"\s+value="([^"]*)"`)
 	// Honeypot time field: hidden input with a random name, placed after _username.
 	reTimeField = regexp.MustCompile(`<input type="hidden" name="([A-Za-z0-9]{8,})" value="(\d+)"`)
-	reUploaded  = regexp.MustCompile(`(?s)ratio-bar__uploaded.*?</i>\s*([\d.,]+)\s*([A-Za-z]+)\s*</a>`)
-	reDownload  = regexp.MustCompile(`(?s)ratio-bar__downloaded.*?</i>\s*([\d.,]+)\s*([A-Za-z]+)\s*</a>`)
+	reUploaded  = regexp.MustCompile(`(?s)ratio-bar__uploaded.*?</i>[\s\x{00a0}]*([\d.,]+)[\s\x{00a0}]*([A-Za-z]+)[\s\x{00a0}]*</a>`)
+	reDownload  = regexp.MustCompile(`(?s)ratio-bar__downloaded.*?</i>[\s\x{00a0}]*([\d.,]+)[\s\x{00a0}]*([A-Za-z]+)[\s\x{00a0}]*</a>`)
 )
 
 type Client struct {
